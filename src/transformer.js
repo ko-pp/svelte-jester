@@ -1,9 +1,9 @@
 import { execSync } from 'child_process'
 import { basename } from 'path'
-import { pathToFileURL } from 'url'
 import * as svelte from 'svelte/compiler'
-
+import { pathToFileURL } from 'url'
 import { getSvelteConfig } from './svelteconfig.js'
+
 
 const dynamicImport = async (filename) => import(pathToFileURL(filename))
 
@@ -93,5 +93,5 @@ const compiler = (format, options = {}, filename, processedCode, processedMap) =
 
 export default {
   process: processSync,
-  processAsync
+  processAsync: processSync
 }
